@@ -6,7 +6,7 @@ const ServerSide = () => {
 
   useEffect(() => {
     axios
-      .get("https://coding-challenges-omega.vercel.app/api/counter/")
+      .get("https://coding-challenge-wine.vercel.app/api/counter/")
       .then((res) => {
         setCounts(res.data);
       })
@@ -18,7 +18,7 @@ const ServerSide = () => {
   const addCounter = async () => {
     try {
       const addCount = await axios.post(
-        "https://coding-challenges-omega.vercel.app/api/counter/create"
+        "https://coding-challenge-wine.vercel.app/api/counter/create"
       );
 
       if (addCount) {
@@ -36,7 +36,7 @@ const ServerSide = () => {
       const updateIncId = counts.map((c) => (c._id === id ? filtered : c));
       setCounts(updateIncId);
       const increment = await axios.post(
-        `https://coding-challenges-omega.vercel.app/api/counter/increment/${id}`
+        `https://coding-challenge-wine.vercel.app/api/counter/increment/${id}`
       );
     } catch (err) {
       console.log(err);
@@ -50,7 +50,7 @@ const ServerSide = () => {
       const updateDecId = counts.map((c) => (c._id === id ? filtered : c));
       setCounts(updateDecId);
       const decrement = await axios.post(
-        `https://coding-challenges-omega.vercel.app/api/counter/decrement/${id}`
+        `https://coding-challenge-wine.vercel.app/api/counter/decrement/${id}`
       );
     } catch (err) {
       console.log(err);
@@ -64,7 +64,7 @@ const ServerSide = () => {
       const updateResId = counts.map((c) => (c._id === id ? filtered : c));
       setCounts(updateResId);
       const reset = await axios.post(
-        `https://coding-challenges-omega.vercel.app/api/counter/reset/${id}`
+        `https://coding-challenge-wine.vercel.app/api/counter/reset/${id}`
       );
     } catch (err) {
       console.log(err);
