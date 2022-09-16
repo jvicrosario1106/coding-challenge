@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 
 // PORT
-const port = 8080;
+const port = 8080 | process.env.PORT;
 
 // Body Parser
 app.use(
@@ -27,7 +27,7 @@ app.use(express.urlencoded({ extended: true, limit: "100mb" }));
 mongoose
   .connect(process.env.MONGODB_HOST)
   .then(() => {
-    app.listen(8080, () => {
+    app.listen(port, () => {
       console.log(`Database Connected & Listening to port ${port}`);
     });
   })
