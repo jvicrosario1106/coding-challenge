@@ -66,12 +66,12 @@ router.post("/decrement/:id", async (req, res) => {
   }
 
   try {
-    const increment = await Count.findByIdAndUpdate(
+    const decrement = await Count.findByIdAndUpdate(
       { _id: id },
       { $inc: { number: -1 } },
       { new: true }
     );
-    if (increment) {
+    if (decrement) {
       res.status(200);
     }
   } catch (err) {
@@ -91,12 +91,12 @@ router.post("/reset/:id", async (req, res) => {
   }
 
   try {
-    const increment = await Count.findByIdAndUpdate(
+    const reset = await Count.findByIdAndUpdate(
       { _id: id },
       { number: 0 },
       { new: true }
     );
-    if (increment) {
+    if (reset) {
       res.status(200);
     }
   } catch (err) {
