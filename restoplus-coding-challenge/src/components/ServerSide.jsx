@@ -64,7 +64,7 @@ const ServerSide = () => {
       const updateResId = counts.map((c) => (c._id === id ? filtered : c));
       setCounts(updateResId);
       const reset = await axios.post(
-        `http://localhost:8080/api/counter/reset/${id}`
+        `https://coding-challenges-omega.vercel.app/api/counter/reset/${id}`
       );
     } catch (err) {
       console.log(err);
