@@ -6,7 +6,7 @@ const ServerSide = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/counter/")
+      .get("https://coding-challenges-omega.vercel.app/api/counter/")
       .then((res) => {
         setCounts(res.data);
       })
@@ -18,7 +18,7 @@ const ServerSide = () => {
   const addCounter = async () => {
     try {
       const addCount = await axios.post(
-        "http://localhost:8080/api/counter/create"
+        "https://coding-challenges-omega.vercel.app/api/counter/create"
       );
 
       if (addCount) {
@@ -36,7 +36,7 @@ const ServerSide = () => {
       const updateIncId = counts.map((c) => (c._id === id ? filtered : c));
       setCounts(updateIncId);
       const increment = await axios.post(
-        `http://localhost:8080/api/counter/increment/${id}`
+        `https://coding-challenges-omega.vercel.app/api/counter/increment/${id}`
       );
     } catch (err) {
       console.log(err);
@@ -50,7 +50,7 @@ const ServerSide = () => {
       const updateDecId = counts.map((c) => (c._id === id ? filtered : c));
       setCounts(updateDecId);
       const decrement = await axios.post(
-        `http://localhost:8080/api/counter/decrement/${id}`
+        `https://coding-challenges-omega.vercel.app/api/counter/decrement/${id}`
       );
     } catch (err) {
       console.log(err);
